@@ -16,10 +16,12 @@
     "title": "Centro de Mando",
     "needsAttention": {
       "title": "Requiere Atención",
-      "empty": "No hay elementos que requieran atención.",
-      "overdue": "Vencido",
-      "noOwner": "Sin responsable",
-      "blocked": "Bloqueado"
+      "empty": "Todo al día",
+      "reason": {
+        "blocked": "BLOQUEADO",
+        "overdue": "ACCIÓN VENCIDA hace {days} días",
+        "noOwner": "SIN RESPONSABLE"
+      }
     }
   },
   "cockpit": {

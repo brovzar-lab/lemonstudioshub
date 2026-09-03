@@ -16,10 +16,12 @@
     "title": "Command Center",
     "needsAttention": {
       "title": "Needs Attention",
-      "empty": "No items require attention.",
-      "overdue": "Overdue",
-      "noOwner": "No owner",
-      "blocked": "Blocked"
+      "empty": "All up to date",
+      "reason": {
+        "blocked": "BLOCKED",
+        "overdue": "OVERDUE {days} days ago",
+        "noOwner": "NO OWNER"
+      }
     }
   },
   "cockpit": {
