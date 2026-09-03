@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "commandCenter": "Centro de Mando",
+    "projects": "Proyectos",
+    "signOut": "Cerrar sesión"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión con Google",
+    "signInTitle": "Lemon Development Hub",
+    "signInSubtitle": "Acceso exclusivo para cuentas @lemonfilms.com",
+    "demoMode": "Modo Demo",
+    "continueAsDemo": "Continuar como usuario demo",
+    "demoNotice": "Modo demo — no se guardarán los cambios"
+  },
+  "commandCenter": {
+    "title": "Centro de Mando",
+    "needsAttention": {
+      "title": "Requiere Atención",
+      "empty": "No hay elementos que requieran atención.",
+      "overdue": "Vencido",
+      "noOwner": "Sin responsable",
+      "blocked": "Bloqueado"
+    }
+  },
+  "cockpit": {
+    "tabs": {
+      "resumen": "Resumen",
+      "documentos": "Documentos",
+      "cobertura": "Cobertura",
+      "tareas": "Tareas",
+      "actividad": "Actividad"
+    },
+    "header": {
+      "noOwner": "Sin responsable",
+      "confidential": "CONFIDENCIAL"
+    },
+    "blockerBanner": {
+      "title": "BLOQUEADOR ACTIVO"
+    },
+    "overview": {
+      "nextAction": "Próxima acción",
+      "noNextAction": "Sin próxima acción",
+      "dueDate": "Vence el {date}",
+      "owner": "Responsable",
+      "noOwner": "Sin responsable",
+      "logline": "Sinopsis",
+      "noLogline": "Sin sinopsis",
+      "stage": "Etapa",
+      "health": "Salud",
+      "manualOverride": "(ajustado manualmente)"
+    },
+    "format": {
+      "FEATURE": "LARGOMETRAJE",
+      "LIMITED_SERIES": "SERIE LIMITADA",
+      "RETURNING_SERIES": "SERIE EN CURSO",
+      "SHORT": "CORTOMETRAJE"
+    },
+    "stage": {
+      "INBOX": "ENTRADA",
+      "TRIAGE": "CLASIFICACIÓN",
+      "READING": "LECTURA",
+      "DEVELOPMENT": "DESARROLLO",
+      "PACKAGING": "EMPAQUE",
+      "PITCHING": "PRESENTACIÓN",
+      "SUBMITTED": "ENVIADO",
+      "PASSED": "RECHAZADO",
+      "DORMANT": "DORMIDO",
+      "WITHDRAWN": "RETIRADO",
+      "GREENLIT": "APROBADO",
+      "ARCHIVED": "ARCHIVADO"
+    },
+    "health": {
+      "ON_TRACK": "AL DÍA",
+      "AT_RISK": "EN RIESGO",
+      "BLOCKED": "BLOQUEADO",
+      "STALE": "INACTIVO"
+    }
+  },
+  "errors": {
+    "notFound": "No encontrado",
+    "forbidden": "Acceso denegado",
+    "forbiddenDescription": "No tienes permiso para ver este proyecto."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "commandCenter": "Command Center",
+    "projects": "Projects",
+    "signOut": "Sign out"
+  },
+  "auth": {
+    "signIn": "Sign in with Google",
+    "signInTitle": "Lemon Development Hub",
+    "signInSubtitle": "Access restricted to @lemonfilms.com accounts",
+    "demoMode": "Demo Mode",
+    "continueAsDemo": "Continue as Demo User",
+    "demoNotice": "Demo mode — changes will not be saved"
+  },
+  "commandCenter": {
+    "title": "Command Center",
+    "needsAttention": {
+      "title": "Needs Attention",
+      "empty": "No items require attention.",
+      "overdue": "Overdue",
+      "noOwner": "No owner",
+      "blocked": "Blocked"
+    }
+  },
+  "cockpit": {
+    "tabs": {
+      "resumen": "Overview",
+      "documentos": "Documents",
+      "cobertura": "Coverage",
+      "tareas": "Tasks",
+      "actividad": "Activity"
+    },
+    "header": {
+      "noOwner": "No owner",
+      "confidential": "CONFIDENTIAL"
+    },
+    "blockerBanner": {
+      "title": "ACTIVE BLOCKER"
+    },
+    "overview": {
+      "nextAction": "Next action",
+      "noNextAction": "No next action",
+      "dueDate": "Due {date}",
+      "owner": "Owner",
+      "noOwner": "No owner",
+      "logline": "Logline",
+      "noLogline": "No logline",
+      "stage": "Stage",
+      "health": "Health",
+      "manualOverride": "(manually adjusted)"
+    },
+    "format": {
+      "FEATURE": "FEATURE",
+      "LIMITED_SERIES": "LIMITED SERIES",
+      "RETURNING_SERIES": "RETURNING SERIES",
+      "SHORT": "SHORT"
+    },
+    "stage": {
+      "INBOX": "INBOX",
+      "TRIAGE": "TRIAGE",
+      "READING": "READING",
+      "DEVELOPMENT": "DEVELOPMENT",
+      "PACKAGING": "PACKAGING",
+      "PITCHING": "PITCHING",
+      "SUBMITTED": "SUBMITTED",
+      "PASSED": "PASSED",
+      "DORMANT": "DORMANT",
+      "WITHDRAWN": "WITHDRAWN",
+      "GREENLIT": "GREENLIT",
+      "ARCHIVED": "ARCHIVED"
+    },
+    "health": {
+      "ON_TRACK": "ON TRACK",
+      "AT_RISK": "AT RISK",
+      "BLOCKED": "BLOCKED",
+      "STALE": "STALE"
+    }
+  },
+  "errors": {
+    "notFound": "Not found",
+    "forbidden": "Access denied",
+    "forbiddenDescription": "You do not have permission to view this project."
+  }
+}
