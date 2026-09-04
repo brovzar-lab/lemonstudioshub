@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
 import { isDemoMode } from "@/lib/demo";
+import { auth } from "@/lib/auth";
 import LocaleSwitcher from "@/components/ui/LocaleSwitcher";
 import "@/app/globals.css";
 
@@ -21,6 +23,17 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!routing.locales.includes(locale as "es" | "en")) {
     notFound();
+  }
+
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "";
+  const isAuthRoute = pathname.includes("/auth/");
+
+  if (!isDemoMode && !isAuthRoute) {
+    const session = await auth();
+    if (!session?.user) {
+      redirect(`/${locale}/auth/signin`);
+    }
   }
 
   const messages = await getMessages();

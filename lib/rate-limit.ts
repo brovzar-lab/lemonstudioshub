@@ -1,16 +1,22 @@
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+const WINDOW_MS = 60_000;
 
-const redis = Redis.fromEnv();
+function createSlidingWindowLimiter(limit: number) {
+  const hits = new Map<string, number[]>();
 
-export const authRateLimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(5, "1 m"),
-  analytics: false,
-});
+  return {
+    async limit(key: string): Promise<{ success: boolean }> {
+      const now = Date.now();
+      const cutoff = now - WINDOW_MS;
+      const keyHits = (hits.get(key) ?? []).filter((t) => t > cutoff);
+      if (keyHits.length >= limit) {
+        return { success: false };
+      }
+      keyHits.push(now);
+      hits.set(key, keyHits);
+      return { success: true };
+    },
+  };
+}
 
-export const uploadRateLimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(10, "1 m"),
-  analytics: false,
-});
+export const authRateLimit = createSlidingWindowLimiter(5);
+export const uploadRateLimit = createSlidingWindowLimiter(10);
