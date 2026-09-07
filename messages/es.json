@@ -22,6 +22,46 @@
         "overdue": "ACCIÓN VENCIDA hace {days} días",
         "noOwner": "SIN RESPONSABLE"
       }
+    },
+    "stats": {
+      "activeProjects": "Proyectos activos",
+      "blocked": "Bloqueados",
+      "pitching": "En presentación",
+      "onTrack": "Al día"
+    },
+    "activeProjects": {
+      "title": "Proyectos Activos",
+      "noOwner": "Sin responsable",
+      "noAction": "—",
+      "columns": {
+        "project": "Proyecto",
+        "stage": "Etapa",
+        "owner": "Responsable",
+        "nextAction": "Próxima acción",
+        "health": "Salud"
+      },
+      "overdue": "Vencido {days}d",
+      "dueIn": "Vence en {days}d",
+      "dueToday": "Vence hoy"
+    },
+    "activity": {
+      "title": "Actividad Reciente",
+      "empty": "Sin actividad reciente",
+      "events": {
+        "documentUploaded": "subió {filename} a",
+        "stageChanged": "cambió etapa a {stage} en",
+        "coverageAdded": "añadió cobertura {verdict} a",
+        "projectCreated": "creó el proyecto",
+        "taskCompleted": "completó tarea en",
+        "decisionLogged": "registró decisión en"
+      },
+      "timeAgo": {
+        "justNow": "ahora mismo",
+        "minutesAgo": "hace {n} min",
+        "hoursAgo": "hace {n}h",
+        "yesterday": "ayer",
+        "daysAgo": "hace {n} días"
+      }
     }
   },
   "cockpit": {
@@ -55,7 +95,8 @@
       "FEATURE": "LARGOMETRAJE",
       "LIMITED_SERIES": "SERIE LIMITADA",
       "RETURNING_SERIES": "SERIE EN CURSO",
-      "SHORT": "CORTOMETRAJE"
+      "SHORT": "CORTOMETRAJE",
+      "DOCUMENTARY": "DOCUMENTAL"
     },
     "stage": {
       "INBOX": "ENTRADA",

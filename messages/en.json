@@ -22,6 +22,46 @@
         "overdue": "OVERDUE {days} days ago",
         "noOwner": "NO OWNER"
       }
+    },
+    "stats": {
+      "activeProjects": "Active projects",
+      "blocked": "Blocked",
+      "pitching": "Pitching",
+      "onTrack": "On track"
+    },
+    "activeProjects": {
+      "title": "Active Projects",
+      "noOwner": "No owner",
+      "noAction": "—",
+      "columns": {
+        "project": "Project",
+        "stage": "Stage",
+        "owner": "Owner",
+        "nextAction": "Next action",
+        "health": "Health"
+      },
+      "overdue": "{days}d overdue",
+      "dueIn": "Due in {days}d",
+      "dueToday": "Due today"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "empty": "No recent activity",
+      "events": {
+        "documentUploaded": "uploaded {filename} to",
+        "stageChanged": "moved to {stage} in",
+        "coverageAdded": "added {verdict} coverage to",
+        "projectCreated": "created project",
+        "taskCompleted": "completed task in",
+        "decisionLogged": "logged decision in"
+      },
+      "timeAgo": {
+        "justNow": "just now",
+        "minutesAgo": "{n}m ago",
+        "hoursAgo": "{n}h ago",
+        "yesterday": "yesterday",
+        "daysAgo": "{n}d ago"
+      }
     }
   },
   "cockpit": {
@@ -55,7 +95,8 @@
       "FEATURE": "FEATURE",
       "LIMITED_SERIES": "LIMITED SERIES",
       "RETURNING_SERIES": "RETURNING SERIES",
-      "SHORT": "SHORT"
+      "SHORT": "SHORT",
+      "DOCUMENTARY": "DOCUMENTARY"
     },
     "stage": {
       "INBOX": "INBOX",
