@@ -7,24 +7,31 @@ import { isDemoMode } from "@/lib/demo";
 import type { CockpitProject } from "@/lib/types/project";
 import { CockpitHeader } from "@/components/project-cockpit/CockpitHeader";
 import { OverviewTab } from "@/components/project-cockpit/OverviewTab";
+import { DocumentsTab } from "@/components/project-cockpit/DocumentsTab";
+import { CoverageTab } from "@/components/project-cockpit/CoverageTab";
+import { TasksTab } from "@/components/project-cockpit/TasksTab";
+import { ActivityTab } from "@/components/project-cockpit/ActivityTab";
 import { CockpitTabs } from "@/components/project-cockpit/CockpitTabs";
 import type { Role } from "@prisma/client";
 
+type Tab = "resumen" | "documentos" | "cobertura" | "tareas" | "actividad";
+
 type Props = {
   params: Promise<{ locale: string; id: string }>;
+  searchParams: Promise<{ tab?: string }>;
 };
 
 const DEMO_PROJECTS: Record<string, CockpitProject> = {
   "demo-blocked": {
     title: "El Último Tren",
     format: "LIMITED_SERIES",
-    logline: null,
+    logline: "Una inspectora de ferroviaria descubre que el accidente que investiga fue un asesinato político encubierto.",
     stage: "PITCHING",
     health: "BLOCKED",
     healthOverride: false,
     sensitivity: "VISIBLE_ALL",
     ownerId: null,
-    owner: null,
+    owner: { id: "demo-user-2", name: "Carlos Mendez", email: "carlos@lemonfilms.com", image: null },
     blocker: "Esperando respuesta de coproductor internacional para continuar con el presupuesto.",
     nextAction: "Seguimiento con coproductor",
     nextActionDue: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
@@ -62,8 +69,41 @@ const DEMO_PROJECTS: Record<string, CockpitProject> = {
   },
 };
 
-export default async function ProjectCockpitPage({ params }: Props) {
+function resolveTab(raw: string | undefined): Tab {
+  const valid: Tab[] = ["resumen", "documentos", "cobertura", "tareas", "actividad"];
+  return valid.includes(raw as Tab) ? (raw as Tab) : "resumen";
+}
+
+function TabContent({
+  tab,
+  project,
+  locale,
+  demoMode,
+}: {
+  tab: Tab;
+  project: CockpitProject;
+  locale: string;
+  demoMode: boolean;
+}) {
+  switch (tab) {
+    case "documentos":
+      return <DocumentsTab locale={locale} demoMode={demoMode} />;
+    case "cobertura":
+      return <CoverageTab locale={locale} demoMode={demoMode} />;
+    case "tareas":
+      return <TasksTab locale={locale} demoMode={demoMode} />;
+    case "actividad":
+      return <ActivityTab locale={locale} demoMode={demoMode} />;
+    case "resumen":
+    default:
+      return <OverviewTab project={project} />;
+  }
+}
+
+export default async function ProjectCockpitPage({ params, searchParams }: Props) {
   const { id, locale } = await params;
+  const { tab: rawTab } = await searchParams;
+  const tab = resolveTab(rawTab);
   const t = await getTranslations("errors");
 
   if (isDemoMode) {
@@ -71,8 +111,13 @@ export default async function ProjectCockpitPage({ params }: Props) {
     return (
       <div className="max-w-5xl mx-auto px-6 py-8">
         <CockpitHeader project={demoProject} />
-        <CockpitTabs />
-        <OverviewTab project={demoProject} />
+        <CockpitTabs locale={locale} />
+        <TabContent
+          tab={tab}
+          project={demoProject}
+          locale={locale}
+          demoMode={true}
+        />
       </div>
     );
   }
@@ -108,8 +153,13 @@ export default async function ProjectCockpitPage({ params }: Props) {
   return (
     <div className="max-w-5xl mx-auto px-6 py-8">
       <CockpitHeader project={project} />
-      <CockpitTabs />
-      <OverviewTab project={project} />
+      <CockpitTabs locale={locale} />
+      <TabContent
+        tab={tab}
+        project={project}
+        locale={locale}
+        demoMode={false}
+      />
     </div>
   );
 }

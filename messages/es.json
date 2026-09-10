@@ -117,6 +117,34 @@
       "AT_RISK": "EN RIESGO",
       "BLOCKED": "BLOQUEADO",
       "STALE": "INACTIVO"
+    },
+    "documents": {
+      "version": "Versión",
+      "filename": "Archivo",
+      "uploader": "Subido por",
+      "date": "Fecha",
+      "size": "Tamaño",
+      "canonical": "Canónico",
+      "download": "Descargar",
+      "uploadNew": "Subir nueva versión",
+      "demoUpload": "Modo demo — no disponible",
+      "demoDownload": "Modo demo — no disponible",
+      "demoNote": "Datos de demostración — no se guardan cambios"
+    },
+    "coverage": {
+      "demoNote": "Datos de demostración — no se guardan cambios"
+    },
+    "tasks": {
+      "task": "Tarea",
+      "assignee": "Responsable",
+      "deadline": "Vencimiento",
+      "status": "Estado",
+      "newTask": "Nueva tarea",
+      "demoNote": "Datos de demostración — no se guardan cambios"
+    },
+    "activity": {
+      "entries": "entradas",
+      "demoNote": "Datos de demostración — no se guardan cambios"
     }
   },
   "errors": {

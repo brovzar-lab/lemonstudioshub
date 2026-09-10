@@ -117,6 +117,34 @@
       "AT_RISK": "AT RISK",
       "BLOCKED": "BLOCKED",
       "STALE": "STALE"
+    },
+    "documents": {
+      "version": "Version",
+      "filename": "File",
+      "uploader": "Uploaded by",
+      "date": "Date",
+      "size": "Size",
+      "canonical": "Canonical",
+      "download": "Download",
+      "uploadNew": "Upload new version",
+      "demoUpload": "Demo mode — not available",
+      "demoDownload": "Demo mode — not available",
+      "demoNote": "Demo data — changes are not saved"
+    },
+    "coverage": {
+      "demoNote": "Demo data — changes are not saved"
+    },
+    "tasks": {
+      "task": "Task",
+      "assignee": "Assignee",
+      "deadline": "Deadline",
+      "status": "Status",
+      "newTask": "New task",
+      "demoNote": "Demo data — changes are not saved"
+    },
+    "activity": {
+      "entries": "entries",
+      "demoNote": "Demo data — changes are not saved"
     }
   },
   "errors": {
