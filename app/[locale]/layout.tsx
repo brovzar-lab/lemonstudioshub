@@ -7,6 +7,8 @@ import { routing } from "@/i18n/routing";
 import { isDemoMode } from "@/lib/demo";
 import { auth } from "@/lib/auth";
 import LocaleSwitcher from "@/components/ui/LocaleSwitcher";
+import { CommandKSearch } from "@/components/ui/CommandKSearch";
+import { SearchButton } from "@/components/ui/SearchButton";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -54,12 +56,14 @@ export default async function LocaleLayout({ children, params }: Props) {
                       Demo Mode
                     </span>
                   )}
+                  <SearchButton locale={locale} />
                   <LocaleSwitcher />
                 </div>
               </div>
             </div>
           </header>
           <main>{children}</main>
+          <CommandKSearch locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
